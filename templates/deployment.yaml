@@ -21,5 +21,13 @@ spec:
         ports:
         - containerPort: 2368
         env:
-        - name: url
+        - name: url containers:
+        ...
+        volumeMounts:
+        - mountPath: /var/lib/ghost/content
+          name: content
+      volumes:
+      - name: content
+        persistentVolumeClaim:
+          claimName: blog-content
           value: http://my-blog.com
