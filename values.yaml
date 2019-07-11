@@ -1,6 +1,3 @@
-pvc:
-  storageClassName: netapp-file
-
-mysql:
-  pvc:
-    storageClassName: netapp-file
+volumes: 
+  persistentVolumeClaim:
+    claimName: blog-content
