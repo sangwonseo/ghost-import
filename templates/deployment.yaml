@@ -21,8 +21,8 @@ spec:
         ports:
         - containerPort: 2368
         env:
-        - name: url containers:
-        ...
+        - name: url 
+          value: http://my-blog.com
         volumeMounts:
         - mountPath: /var/lib/ghost/content
           name: content
@@ -30,4 +30,3 @@ spec:
       - name: content
         persistentVolumeClaim:
           claimName: {{ .Values.persistentVolumeClaim.claimName }}
-          value: http://my-blog.com
