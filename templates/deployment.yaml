@@ -29,5 +29,5 @@ spec:
       volumes:
       - name: content
         persistentVolumeClaim:
-          claimName: blog-content
+          claimName: {{ .Values.persistentVolumeClaim.claimName }}
           value: http://my-blog.com
