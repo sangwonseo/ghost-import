@@ -1,21 +1,21 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: blog
+  name: ghost
   labels:
-    app: blog
+    app: ghost
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: blog
+      app: ghost
   template:
     metadata:
       labels:
-        app: blog
+        app: ghost
     spec:
       containers:
-      - name: blog
+      - name: ghost
         image: ghost:2.6-alpine
         imagePullPolicy: Always
         ports:
@@ -23,3 +23,10 @@ spec:
         env:
         - name: url
           value: http://my-blog.com
+        volumeMounts:
+        - mountPath: /var/lib/ghost/content/content
+          name: content
+      volumes:
+      - name: content
+        persistentVolumeClaim:
+          claimName: ghost-content
