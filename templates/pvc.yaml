@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: {{ .Values.name.storageClassName }} 
+  name: {{ .Values.pvc.name }} 
   labels:
     app: ghost
 spec:
