@@ -1,3 +1,3 @@
-# volumes: 
-#  persistentVolumeClaim:
-#    claimName: content-blog
+pvc:
+  storageClassName: netapp-file
+  name: ghost-content 
