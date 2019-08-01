@@ -29,4 +29,4 @@ spec:
       volumes:
       - name: content
         persistentVolumeClaim:
-          claimName: ghost-content
+          claimName: {{ .Values.pvc.name }}
